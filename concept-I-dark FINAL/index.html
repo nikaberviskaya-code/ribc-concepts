@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Российско-Индийский деловой совет</title>
+<meta name="description" content="Площадка реализации бизнес-интересов клиентов обеих стран. Концепт визуального редизайна: тёмная тема.">
+<meta name="theme-color" content="#04100B">
+<meta name="color-scheme" content="dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/boot.js"></script>
+</head>
+<body>
+
+<!-- SVG-спрайт: градиенты и иконки -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-logo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9BF2C6"/><stop offset="1" stop-color="#F2994A"/></linearGradient>
+    <linearGradient id="g-metal" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4F6F0"/><stop offset=".5" stop-color="#8FA097"/><stop offset="1" stop-color="#E4E9E1"/></linearGradient>
+    <linearGradient id="g-em" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9BF2C6"/><stop offset=".55" stop-color="#2BD67B"/><stop offset="1" stop-color="#0E6B3F"/></linearGradient>
+    <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFCB93"/><stop offset=".55" stop-color="#F2994A"/><stop offset="1" stop-color="#9A4A12"/></linearGradient>
+    <linearGradient id="g-card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1B2D25"/><stop offset="1" stop-color="#08130E"/></linearGradient>
+    <linearGradient id="g-card2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E9ECE4"/><stop offset="1" stop-color="#7C8C83"/></linearGradient>
+    <linearGradient id="g-card3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFCB93"/><stop offset="1" stop-color="#8F4513"/></linearGradient>
+    <linearGradient id="g-rib1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2BD67B" stop-opacity="0"/><stop offset=".35" stop-color="#2BD67B"/><stop offset=".7" stop-color="#F2994A"/><stop offset="1" stop-color="#F2994A" stop-opacity="0"/></linearGradient>
+    <linearGradient id="g-rib2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9BF2C6" stop-opacity="0"/><stop offset=".4" stop-color="#9BF2C6"/><stop offset=".8" stop-color="#B9B4F0"/><stop offset="1" stop-color="#B9B4F0" stop-opacity="0"/></linearGradient>
+    <linearGradient id="g-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2994A" stop-opacity=".55"/><stop offset=".6" stop-color="#2BD67B" stop-opacity=".12"/><stop offset="1" stop-color="#2BD67B" stop-opacity="0"/></linearGradient>
+    <linearGradient id="g-line" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2BD67B"/><stop offset="1" stop-color="#F2994A"/></linearGradient>
+
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ur" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15 25 6 6 12-13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2"/><path d="M24 14v13M24 33.5v.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+
+    <symbol id="d-fin" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8M15 7h6v6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="d-ind" viewBox="0 0 24 24"><path d="M3 21V10l6 3.5V10l6 3.5V5h6v16zM7 17h2M12 17h2M17 17h1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="d-tech" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 10h4v4h-4zM9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="d-log" viewBox="0 0 24 24"><path d="M2 6h12v10H2zM14 9.5h4l3 3.5v3h-7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="6.5" cy="18" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="18" r="1.8" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+    <symbol id="d-en" viewBox="0 0 24 24"><path d="M13 2 4.5 13.5H11L10 22l8.5-11.5H12z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="d-agro" viewBox="0 0 24 24"><path d="M12 22V11M12 11c0-4.2 3-6.8 8-7 0 4.4-3 7-8 7zM12 15c0-3.4-2.4-5.6-7-5.8 0 3.6 2.6 5.8 7 5.8z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="d-med" viewBox="0 0 24 24"><path d="M12 20.5s-8-4.7-8-10.6A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8 2.9c0 5.900-8 10.600-8 10.600zM8 12h2.200l1.300-2.500 1.700 4.500 1.100-2H16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="d-edu" viewBox="0 0 24 24"><path d="m2 9 10-5 10 5-10 5zM6 11.500V16c0 1.600 2.700 3 6 3s6-1.400 6-3v-4.500M22 9v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Перейти к содержимому</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<!-- ================= Header ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="hdr">
+    <a class="logo" href="#top" aria-label="Российско-Индийский деловой совет — на главную"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><mask id="lgm1" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><ellipse cx="50" cy="50" rx="25" ry="52" fill="none" stroke="#000" stroke-width="7"/><rect x="-1" y="47.2" width="102" height="5.6" fill="#000"/><path d="M54 50C67 50 71.5 46.5 74 25C76.5 46.5 82 50 96 50C82 50 76.5 53.5 74 75C71.5 53.5 67 50 54 50Z" fill="#000"/></mask></defs><circle cx="50" cy="50" r="50" fill="currentColor" mask="url(#lgm1)"/></svg>
+      <span>Деловой совет<br>Россия — Индия</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="lnk" href="#about">О Совете</a>
+      <a class="lnk" href="#directions">Бизнес с Индией</a>
+    </nav>
+    <div class="hdr__r">
+      <a class="btn btn--sm btn--ghost hdr__cta" href="#join">Оставить заявку <svg class="ar" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Открыть меню"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="menu" id="menu" inert aria-hidden="true">
+  <nav aria-label="Мобильное меню">
+    <a href="#about" style="--i:0">О Совете</a>
+    <a href="#directions" style="--i:1">Бизнес с Индией</a>
+  </nav>
+  <a class="btn btn--light" href="#join" style="--i:2">Оставить заявку <svg class="ar" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+</div>
+
+<main id="main">
+<!-- ================= Hero ================= -->
+<section class="hero" id="top" aria-label="Российско-Индийский деловой совет">
+  <div class="blob" aria-hidden="true">
+    <span class="b b1"></span><span class="b b2"></span><span class="b b3"></span><span class="b b4"></span>
+    <svg class="fold" viewBox="0 0 800 800" fill="none">
+      <path class="fp fp1" d="M60 560C170 380 250 240 380 250s90 210 230 150" stroke="url(#g-rib2)" stroke-width="26" stroke-linecap="round"/>
+      <path class="fp fp2" d="M90 610C210 440 300 300 420 320s80 200 200 140" stroke="url(#g-rib1)" stroke-width="3" stroke-linecap="round"/>
+      <path class="fp fp3" d="M40 520C150 330 240 200 380 215" stroke="url(#g-rib2)" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="wrap hero__in">
+    <h1 id="heroTitle">
+      <span class="ln"><span>Российско-<br class="br-m">Индийский</span></span>
+      <span class="ln ln--2"><span>деловой совет</span></span>
+    </h1>
+    <div class="hero__foot">
+      <p class="hero__lead">Площадка реализации бизнес-интересов клиентов обеих стран</p>
+      <a class="btn btn--light btn--lg" href="#join">Стать участником <svg class="ar" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Three pillars ================= -->
+<section class="pillars" aria-label="Чем занимается Совет">
+  <div class="wrap pillars__grid">
+    <article class="pil" data-reveal>
+      <div class="pil__vis" aria-hidden="true">
+        <svg viewBox="0 0 220 160" width="220" height="160">
+          <g fill="none" stroke-linecap="round">
+            <path d="M44 112 92 58M92 58 150 78M150 78 178 36M92 58 110 124M150 78 110 124M44 112 110 124" stroke="rgba(238,241,232,.38)" stroke-width="1.6"/>
+            <path d="M92 58 150 78" stroke="url(#g-line)" stroke-width="2.4"/>
+          </g>
+          <circle cx="44" cy="112" r="11" fill="url(#g-card)" stroke="rgba(238,241,232,.45)" stroke-width="1.5"/>
+          <circle cx="178" cy="36" r="9" fill="url(#g-card3)"/>
+          <circle cx="110" cy="124" r="13" fill="url(#g-card2)"/>
+          <circle cx="92" cy="58" r="17" fill="url(#g-metal)"/>
+          <circle cx="150" cy="78" r="22" fill="url(#g-em)"/>
+          <circle cx="150" cy="78" r="22" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.2"/>
+          <circle cx="150" cy="78" r="33" fill="none" stroke="rgba(155,242,198,.25)" stroke-width="1" stroke-dasharray="2 5"/>
+        </svg>
+      </div>
+      <span class="chip">01</span>
+      <h3>Деловые связи и сотрудничество</h3>
+      <p>Помогаем выстраивать контакты между компаниями и находить новые форматы взаимодействия</p>
+    </article>
+    <article class="pil" data-reveal>
+      <div class="pil__vis" aria-hidden="true">
+        <svg viewBox="0 0 220 160" width="220" height="160">
+          <g transform="translate(110 86)">
+            <g transform="rotate(-16) translate(-44 -28)"><rect width="88" height="56" rx="9" fill="url(#g-card)" stroke="rgba(238,241,232,.28)"/><rect x="10" y="12" width="14" height="10" rx="2" fill="url(#g-gold)"/></g>
+            <g transform="rotate(-2) translate(-30 -34)"><rect width="88" height="56" rx="9" fill="url(#g-card3)"/><rect x="10" y="12" width="14" height="10" rx="2" fill="rgba(0,0,0,.35)"/><rect x="10" y="40" width="34" height="3" rx="1.5" fill="rgba(0,0,0,.3)"/></g>
+            <g transform="rotate(14) translate(-14 -22)"><rect width="88" height="56" rx="9" fill="url(#g-card2)"/><rect x="10" y="12" width="14" height="10" rx="2" fill="rgba(0,0,0,.3)"/><rect x="10" y="40" width="34" height="3" rx="1.5" fill="rgba(0,0,0,.25)"/></g>
+          </g>
+        </svg>
+      </div>
+      <span class="chip">02</span>
+      <h3>Совместные инициативы и проекты</h3>
+      <p>Создаём среду для проработки перспективных проектов и партнёрств</p>
+    </article>
+    <article class="pil" data-reveal>
+      <div class="pil__vis" aria-hidden="true">
+        <div class="stage stage--sm"><span class="coin coin--gold" style="--s:132px;--x:0px;--y:0px;--ry:-28deg;--rz:8deg" data-glyph="₹"></span></div>
+      </div>
+      <span class="chip">03</span>
+      <h3>Экспертиза и знания о рынках</h3>
+      <p>Объединяем знания о рынках, отраслях и возможностях двух стран</p>
+    </article>
+  </div>
+</section>
+
+<!-- ================= Dialog → results ================= -->
+<section class="dialog" id="about" aria-labelledby="dialogTitle">
+  <div class="wrap dialog__grid">
+    <div class="dialog__l">
+      <h2 class="h2" id="dialogTitle" data-split>От стратегического диалога <em>— к реальным результатам</em></h2>
+      <a class="btn btn--light" href="#join" data-reveal>Стать участником <svg class="ar" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <ol class="rows">
+      <li class="row" data-reveal><span class="n">1</span><h3>Деловые связи</h3><p>Контакты и взаимодействие компаний</p></li>
+      <li class="row" data-reveal><span class="n">2</span><h3>Отраслевой диалог</h3><p>Экспертные встречи и комитеты</p></li>
+      <li class="row" data-reveal><span class="n">3</span><h3>Аналитика</h3><p>Знания о двух рынках</p></li>
+      <li class="row" data-reveal><span class="n">4</span><h3>Проектная работа</h3><p>Подготовка совместных инициатив</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= Quote / leadership ================= -->
+<section class="quote" aria-label="Руководство Совета">
+  <div class="wrap">
+    <div class="quote__box" data-reveal>
+      <div class="quote__glow" aria-hidden="true"></div>
+      <div class="quote__body">
+        <div class="quote__top"><p class="eyebrow">Руководство Совета</p><a class="chip chip--link" href="#about">О Совете</a></div>
+        <blockquote>
+          <p class="quote__text" id="quoteText">Задача Совета объединять бизнес России и Индии, поддерживать диалог и создавать условия для совместных проектов</p>
+        </blockquote>
+        <div class="qa">
+          <strong>Герман Греф</strong>
+          <span>Председатель Российско-Индийского делового совета, Президент, Председатель Правления Сбербанка</span>
+        </div>
+      </div>
+      <div class="portrait"><img src="assets/portrait.webp" alt="Герман Греф" width="560" height="560" decoding="async" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Directions ================= -->
+<section class="dirs" id="directions" aria-labelledby="dirsTitle">
+  <div class="wrap">
+    <div class="sechead"><h2 class="h2" id="dirsTitle" data-split>Перспективные <em>направления</em> взаимодействия</h2></div>
+    <div class="grid8" id="grid8">
+      <a class="tile" href="#join"><span class="ico"><svg aria-hidden="true"><use href="#d-fin"/></svg></span><h3>Финансы и инвестиции</h3></a>
+      <a class="tile" href="#join"><span class="ico"><svg aria-hidden="true"><use href="#d-ind"/></svg></span><h3>Промышленность</h3></a>
+      <a class="tile" href="#join"><span class="ico"><svg aria-hidden="true"><use href="#d-tech"/></svg></span><h3>Технологии и инновации</h3></a>
+      <a class="tile" href="#join"><span class="ico"><svg aria-hidden="true"><use href="#d-log"/></svg></span><h3>Транспорт и логистика</h3></a>
+      <a class="tile" href="#join"><span class="ico"><svg aria-hidden="true"><use href="#d-en"/></svg></span><h3>Энергетика</h3></a>
+      <a class="tile" href="#join"><span class="ico"><svg aria-hidden="true"><use href="#d-agro"/></svg></span><h3>Агропромышленный комплекс</h3></a>
+      <a class="tile" href="#join"><span class="ico"><svg aria-hidden="true"><use href="#d-med"/></svg></span><h3>Здравоохранение</h3></a>
+      <a class="tile" href="#join"><span class="ico"><svg aria-hidden="true"><use href="#d-edu"/></svg></span><h3>Образование и кадры</h3></a>
+    </div>
+    <div class="dirs__cta" data-reveal><a class="btn btn--light" href="#join">Стать участником <svg class="ar" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- ================= Events ================= -->
+<section class="events" id="events" aria-labelledby="evTitle">
+  <div class="events__panel">
+    <svg class="ribbons" viewBox="0 0 1200 700" preserveAspectRatio="xMaxYMid slice" fill="none" aria-hidden="true">
+      <path class="rp" d="M1200 40C1010 90 930 250 780 300S520 260 420 360" stroke="url(#g-rib1)" stroke-width="64" stroke-linecap="round" opacity=".5"/>
+      <path class="rp" d="M1200 130C1030 170 960 320 810 360S560 330 470 430" stroke="url(#g-rib2)" stroke-width="30" stroke-linecap="round" opacity=".55"/>
+      <path class="rp" d="M1200 200C1050 240 990 380 850 410" stroke="url(#g-rib1)" stroke-width="2" stroke-linecap="round" opacity=".9"/>
+    </svg>
+    <div class="events__head">
+      <h2 class="h2" id="evTitle" data-split>Ближайшие <em>мероприятия</em></h2>
+      <p class="count" data-reveal><b data-count="20">20</b><span>Мероприятий запланировано в 2027 году</span></p>
+    </div>
+    <div class="evgrid">
+      <a class="ev" href="https://www.vibrantgujarat.com/" target="_blank" rel="noopener" data-reveal>
+        <div class="ev__d"><div><b>10—12</b><small>января 2027</small></div><span class="ev__go" aria-hidden="true"><svg><use href="#i-ur"/></svg></span></div>
+        <h3>Vibrant Gujarat Global Summit 2027</h3>
+        <p class="pl"><svg aria-hidden="true"><use href="#i-pin"/></svg> Индия, Гуджарат<span class="sr-only">, откроется в новой вкладке</span></p>
+      </a>
+      <a class="ev" href="https://www.indiaenergyweek.com/" target="_blank" rel="noopener" data-reveal>
+        <div class="ev__d"><div><b>28—31</b><small>января 2027</small></div><span class="ev__go" aria-hidden="true"><svg><use href="#i-ur"/></svg></span></div>
+        <h3>India Energy Week</h3>
+        <p class="pl"><svg aria-hidden="true"><use href="#i-pin"/></svg> Индия, Калькутта<span class="sr-only">, откроется в новой вкладке</span></p>
+      </a>
+      <a class="ev" href="https://www.bharat-mobility.com/" target="_blank" rel="noopener" data-reveal>
+        <div class="ev__d"><div><b>4—9</b><small>февраля 2027</small></div><span class="ev__go" aria-hidden="true"><svg><use href="#i-ur"/></svg></span></div>
+        <h3>Bharat Mobility</h3>
+        <p class="pl"><svg aria-hidden="true"><use href="#i-pin"/></svg> Индия, Дели<span class="sr-only">, откроется в новой вкладке</span></p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= News ================= -->
+<section class="news" id="news" aria-labelledby="newsTitle">
+  <div class="wrap">
+    <div class="sechead"><h2 class="h2" id="newsTitle" data-split>Новости</h2></div>
+    <div class="nlist" id="nlist">
+      <a class="nw" href="https://ribc.sber.bank.in/cases/news-agro" target="_blank" rel="noopener" data-reveal>
+        <time class="nw__d"><b>27</b><span>октября</span></time>
+        <h3>Россия и Индия обсуждают снятие нетарифных ограничений на поставки агропродукции<span class="sr-only">, откроется в новой вкладке</span></h3>
+        <span class="nw__t"><span class="nw__go" aria-hidden="true"><svg><use href="#i-ur"/></svg></span></span>
+      </a>
+      <a class="nw" href="https://ribc.sber.bank.in/cases/tourism" target="_blank" rel="noopener" data-reveal>
+        <time class="nw__d"><b>24</b><span>октября</span></time>
+        <h3>Россия предложила Индии почти в пять раз увеличить число прямых рейсов<span class="sr-only">, откроется в новой вкладке</span></h3>
+        <span class="nw__t"><span class="nw__go" aria-hidden="true"><svg><use href="#i-ur"/></svg></span></span>
+      </a>
+      <a class="nw" href="https://ribc.sber.bank.in/cases/seaport" target="_blank" rel="noopener" data-reveal>
+        <time class="nw__d"><b>24</b><span>октября</span></time>
+        <h3>Россия и Индия рассматривают строительство совместных портов<span class="sr-only">, откроется в новой вкладке</span></h3>
+        <span class="nw__t"><span class="nw__go" aria-hidden="true"><svg><use href="#i-ur"/></svg></span></span>
+      </a>
+      <a class="nw" href="https://ribc.sber.bank.in/cases/investment" target="_blank" rel="noopener" data-reveal>
+        <time class="nw__d"><b>8</b><span>октября</span></time>
+        <h3>Россия и Индия ведут переговоры о соглашении о защите инвестиций<span class="sr-only">, откроется в новой вкладке</span></h3>
+        <span class="nw__t"><span class="nw__go" aria-hidden="true"><svg><use href="#i-ur"/></svg></span></span>
+      </a>
+      <a class="nw" href="https://ribc.sber.bank.in/cases/pharm" target="_blank" rel="noopener" data-reveal>
+        <time class="nw__d"><b>23</b><span>сентября</span></time>
+        <h3>Индийские компании рассматривают запуск фарм- и медпроизводства в Москве<span class="sr-only">, откроется в новой вкладке</span></h3>
+        <span class="nw__t"><span class="nw__go" aria-hidden="true"><svg><use href="#i-ur"/></svg></span></span>
+      </a>
+      <a class="nw" href="https://ribc.sber.bank.in/cases/german-gref-vozglavil-rossiisko-indiiskii-delovoi-sovet" target="_blank" rel="noopener" data-reveal>
+        <time class="nw__d"><b>11</b><span>сентября</span></time>
+        <h3>Герман Греф возглавил Российско-Индийский деловой совет<span class="sr-only">, откроется в новой вкладке</span></h3>
+        <span class="nw__t"><span class="nw__go" aria-hidden="true"><svg><use href="#i-ur"/></svg></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Rupee banner ================= -->
+<section class="rupee" aria-labelledby="rupTitle">
+  <div class="rupee__panel" id="rupeePanel">
+    <svg class="chart" viewBox="0 0 1200 360" preserveAspectRatio="none" aria-hidden="true">
+      <g stroke="rgba(238,241,232,.08)" stroke-dasharray="2 8"><path d="M150 0v360M330 0v360M510 0v360M690 0v360M870 0v360M1050 0v360"/></g>
+      <path class="area" d="M0 300 90 250 170 270 260 190 340 215 430 120 520 210 600 170 690 230 780 160 870 90 960 190 1050 140 1140 210 1200 180V360H0z" fill="url(#g-area)"/>
+      <path class="aline" d="M0 300 90 250 170 270 260 190 340 215 430 120 520 210 600 170 690 230 780 160 870 90 960 190 1050 140 1140 210 1200 180" fill="none" stroke="url(#g-line)" stroke-width="1.6" stroke-linejoin="round"/>
+    </svg>
+    <div class="rupee__txt">
+      <h2 class="h2 h2--m" id="rupTitle">Хотите работать с Индией? <em>Откройте счёт в рупиях</em> и переводите оплату от 10 минут</h2>
+      <p>Платите и получайте переводы в валюте контрагента, без конвертации через доллар или евро</p>
+      <a class="btn btn--light" href="#join">Узнать больше <svg class="ar" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="stage stage--fan" id="fan" aria-hidden="true">
+      <span class="coin coin--dark"   style="--s:178px;--x:0px;--y:118px;--ry:58deg;--rz:-12deg" data-glyph="₽"></span>
+      <span class="coin coin--em"     style="--s:178px;--x:84px;--y:56px;--ry:48deg;--rz:-6deg" data-glyph="₹"></span>
+      <span class="coin coin--silver" style="--s:178px;--x:186px;--y:92px;--ry:74deg;--rz:4deg" data-glyph="₽"></span>
+      <span class="coin coin--gold"   style="--s:178px;--x:262px;--y:30px;--ry:38deg;--rz:8deg" data-glyph="₹"></span>
+      <span class="coin coin--dark"   style="--s:178px;--x:352px;--y:104px;--ry:52deg;--rz:14deg" data-glyph="₽"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Join + form ================= -->
+<section class="join" id="join" aria-labelledby="joinTitle">
+  <div class="join__panel">
+    <div class="join__glow" aria-hidden="true"><span></span><span></span></div>
+    <div class="join__txt">
+      <h2 class="h2" id="joinTitle">Станьте частью <em><span class="ru">Российско-</span><span class="in">Индийского</span></em> делового совета</h2>
+      <p class="join__lead"><strong>чтобы находить партнёров</strong>, участвовать в совместных проектах и развивать сотрудничество между бизнесом России и Индии</p>
+    </div>
+    <form class="form" id="joinForm" novalidate>
+      <h3 class="form__t">Оставить заявку</h3>
+      <div class="fld"><input id="f-name" name="name" type="text" placeholder=" " autocomplete="name" required aria-describedby="e-name"><label for="f-name">Имя и фамилия*</label><p class="msg" id="e-name" role="alert">Введите имя и фамилию</p></div>
+      <div class="fld"><input id="f-co" name="company" type="text" placeholder=" " autocomplete="organization" required aria-describedby="e-co"><label for="f-co">Компания*</label><p class="msg" id="e-co" role="alert">Введите название компании</p></div>
+      <div class="fld"><input id="f-mail" name="email" type="email" placeholder=" " autocomplete="email" required aria-describedby="e-mail"><label for="f-mail">Email*</label><p class="msg" id="e-mail" role="alert">Введите email</p></div>
+      <div class="fld"><input id="f-tel" name="phone" type="tel" inputmode="tel" placeholder=" " autocomplete="tel"><label for="f-tel">Телефон</label></div>
+      <div class="fld"><textarea id="f-msg" name="comment" placeholder=" " rows="2"></textarea><label for="f-msg">Комментарий</label></div>
+      <p class="consent">Нажимая кнопку, я даю своё <a href="https://www.sberbank.ru/ru/legal/agreement" target="_blank" rel="noopener">согласие на взаимодействие и обработку персональных данных<span class="sr-only">, откроется в новой вкладке</span></a></p>
+      <button class="btn btn--light btn--block" type="submit"><span class="lbl">Отправить</span><svg class="ar" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <div class="ok" id="formOk" role="status" aria-live="polite">
+        <svg class="ok__i" aria-hidden="true"><use href="#i-check"/></svg>
+        <h3 tabindex="-1" id="okTitle">Заявка отправлена</h3>
+        <p>Мы свяжемся с вами, чтобы обсудить участие в Совете.</p>
+        <button class="btn btn--ghost btn--sm" type="button" id="okReset"><span class="lbl">Отправить ещё одну</span></button>
+      </div>
+      <div class="ok ok--fail" id="formFail" role="alert">
+        <svg class="ok__i" aria-hidden="true"><use href="#i-alert"/></svg>
+        <h3 tabindex="-1" id="failTitle">Что-то пошло не так</h3>
+        <p>Попробуйте отправить заявку ещё раз</p>
+        <button class="btn btn--ghost btn--sm" type="button" id="failReset"><span class="lbl">Попробовать снова</span></button>
+      </div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ================= Footer ================= -->
+<footer class="foot">
+  <div class="wrap foot__in">
+    <a class="logo" href="#top" aria-label="Российско-Индийский деловой совет — наверх"><svg viewBox="0 0 100 100" aria-hidden="true"><defs><mask id="lgm2" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><rect width="100" height="100" fill="#fff"/><ellipse cx="50" cy="50" rx="25" ry="52" fill="none" stroke="#000" stroke-width="7"/><rect x="-1" y="47.2" width="102" height="5.6" fill="#000"/><path d="M54 50C67 50 71.5 46.5 74 25C76.5 46.5 82 50 96 50C82 50 76.5 53.5 74 75C71.5 53.5 67 50 54 50Z" fill="#000"/></mask></defs><circle cx="50" cy="50" r="50" fill="currentColor" mask="url(#lgm2)"/></svg>
+      <span>Деловой совет<br>Россия — Индия</span>
+    </a>
+    <nav aria-label="Нижняя навигация"><a href="#about">О Совете</a><a href="#directions">Бизнес с Индией</a></nav>
+    <small>© 2026 Деловой совет по сотрудничеству с Индией</small>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
