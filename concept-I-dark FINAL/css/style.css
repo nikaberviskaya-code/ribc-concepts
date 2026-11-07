@@ -421,3 +421,11 @@ h1 .ln--2{color:var(--mint)}
   .portrait{width:min(100%,480px);aspect-ratio:1/1;height:auto;min-height:0;margin-inline:auto;align-self:start}
   .portrait img{object-fit:cover;object-position:50% 8%}
 }
+
+/* мобильная версия: блюр в hero снова виден (поздние правила .blob перебивали мобильные размеры) */
+@media (max-width:900px){
+  .blob{left:-35vw;top:4vh;width:170vw;opacity:1}
+}
+@media (max-width:640px){
+  .blob{left:-45vw;top:6vh;width:190vw}
+}

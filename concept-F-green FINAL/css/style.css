@@ -104,7 +104,7 @@ body.menu-lock{overflow:hidden}
 .hero__shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(100deg,rgba(3,16,12,.78) 0%,rgba(3,16,12,.25) 42%,rgba(3,16,12,0) 65%),linear-gradient(0deg,rgba(3,16,12,.7) 0%,rgba(3,16,12,0) 38%)}
 .hero__in{width:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:32px;padding:96px var(--gutter) clamp(6px,1vw,16px)}
 .hero__node{position:absolute;z-index:1;width:0;height:0;pointer-events:none}
-.hero__node--a{left:5%;top:57%}
+.hero__node--a{left:5%;top:47%}
 .hero__node--b{left:94%;top:28%}
 .hero__lbl{position:absolute;left:0;bottom:24px;transform:translateX(-50%);white-space:nowrap;font-size:15px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 2px 16px rgba(3,16,12,.75);animation:nodeIn .9s .5s var(--ease) both}
 @keyframes nodeIn{from{opacity:0}to{opacity:1}}
@@ -362,3 +362,73 @@ body.menu-lock{overflow:hidden}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+/* ===== Мобильная адаптация (добавлено) ===== */
+html,body{overflow-x:clip}
+@media (max-width:640px){
+  :root{--gutter:16px}
+  h2{font-size:clamp(28px,8.6vw,38px);line-height:1.1;letter-spacing:.02em}
+  .sechead{margin-bottom:24px;gap:16px}
+  .sechead h2{max-width:none}
+
+  /* карточки услуг: иконка слева, текст справа — вдвое ниже */
+  .svc-grid{gap:10px;margin-bottom:36px}
+  .svc{display:grid;grid-template-columns:48px 1fr;column-gap:14px;row-gap:6px;padding:16px 16px 18px;align-items:start}
+  .svc .ico{grid-row:1 / span 2;margin:0;width:48px;height:48px}
+  .svc h3{font-size:20px;align-self:center}
+  .svc p{grid-column:2;font-size:15px;line-height:1.4}
+
+  /* отрасли: две колонки */
+  .grid8{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .tile{padding:14px;gap:14px;min-height:0;border-radius:20px}
+  .tile .ico{width:40px;height:40px}
+  .tile h3{font-size:14px;letter-spacing:.01em;overflow-wrap:anywhere;hyphens:auto;min-height:0}
+
+  /* цифры */
+  .stats{padding-top:24px}
+  .stats__grid{gap:10px}
+
+  /* большие панели: меньше внутренних отступов */
+  .events,.rupee,.join{padding:8px}
+  .rupee__panel{padding:26px 20px 22px;gap:24px}
+  .rupee h2{font-size:clamp(30px,9.2vw,40px)}
+  .rupee p{margin:16px 0 22px;font-size:17px}
+  .join__panel{padding:26px 16px 16px;gap:22px}
+  .join h2{font-size:clamp(28px,8.4vw,38px);max-width:none}
+  .join__lead{font-size:17px}
+  .evgrid{gap:10px}
+  .ev{padding:20px;gap:14px}
+
+  /* кнопки на всю ширину */
+  .btn{min-height:52px}
+  .dialog__l .btn,.rupee .btn,.sechead .btn{width:100%;justify-content:space-between}
+
+  /* новости, подвал */
+  .nw{padding-block:18px}
+  .foot nav a{padding:10px 0}
+}
+
+/* 320–380 */
+@media (max-width:380px){
+  :root{--gutter:14px}
+  .hero h1{font-size:clamp(30px,10.4vw,36px)}
+  .stat{padding:14px}
+  .stat__v{font-size:34px}
+  .grid8{gap:8px}
+  .tile h3{font-size:13px}
+  .join h2,.rupee h2{font-size:27px;letter-spacing:.01em;overflow-wrap:anywhere}
+  .ev h3{font-size:18px}
+}
+
+/* сенсорные экраны: без залипающих hover-сдвигов */
+@media (hover:none){
+  .svc:hover,.tile:hover,.ev:hover{transform:none;box-shadow:none}
+}
+
+/* мобильная версия: первый экран ниже на 20% — меньше пустоты между графикой и заголовком */
+@media (max-width:640px){
+  .hero__panel{height:80svh;min-height:480px}
+}
+
+/* подписи городов появляются вместе с узлами: Москва сразу, Дели — когда нити до него дотянулись */
+.hero__node--b .hero__lbl{animation-delay:2.7s}

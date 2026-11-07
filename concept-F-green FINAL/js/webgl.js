@@ -53,14 +53,14 @@ function initHero() {
   g.setAttribute('aT', new THREE.BufferAttribute(aT, 1));
   g.setAttribute('aSeed', new THREE.BufferAttribute(aSeed, 1));
 
-  const uniforms = { uTime: { value: 0 }, uAsp: { value: 1.6 }, uMouse: { value: new THREE.Vector2(9, 9) }, uPx: { value: 1 } };
-  const ENDS = `vec2 A = vec2(-.90 * uAsp, -.14), B = vec2(.88 * uAsp, uAsp < 1. ? .30 : .44);`;
+  const uniforms = { uTime: { value: 0 }, uGrow: { value: reduce ? 1 : 0 }, uAsp: { value: 1.6 }, uMouse: { value: new THREE.Vector2(9, 9) }, uPx: { value: 1 } };
+  const ENDS = `vec2 A = vec2(-.90 * uAsp, .06), B = vec2(.88 * uAsp, uAsp < 1. ? .30 : .44);`;
 
   const threadMat = new THREE.ShaderMaterial({
     uniforms, transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
     vertexShader: `
       attribute float aT; attribute float aSeed;
-      uniform float uTime, uAsp; uniform vec2 uMouse;
+      uniform float uTime, uAsp, uGrow; uniform vec2 uMouse;
       varying float vA, vT, vHot;
       float h(float n){ return fract(sin(n * 127.1 + 3.7) * 43758.5453); }
       void main(){
@@ -69,11 +69,14 @@ function initHero() {
         vec2 dir = normalize(B - A), nrm = vec2(-dir.y, dir.x);
         float env = pow(sin(3.14159265 * t), 1.15);
         float spread = h(s * 91.7) - .5;
-        float amp = .10 + .34 * h(s * 3.7);
-        float sp = 1. + h(s * 7.1) * 1.8;
+        /* на узких (мобильных) экранах нити спокойнее: меньше размах и меньше изгибов */
+        float k = smoothstep(.5, 1.25, uAsp);
+        float bloom = smoothstep(.15, 1., uGrow);
+        float amp = (.10 + .34 * h(s * 3.7)) * mix(.34, 1., k);
+        float sp = 1. + h(s * 7.1) * mix(.8, 1.8, k);
         float ph = h(s * 13.3) * 6.2831;
         float wave = sin(t * sp * 6.2831 + uTime * (.12 + .25 * h(s * 5.3)) + ph);
-        vec2 p = mix(A, B, t) + nrm * (spread * 1.1 + wave * .55) * amp * env;
+        vec2 p = mix(A, B, t) + nrm * (spread * 1.1 + wave * .55) * amp * env * bloom;
         p.y += .07 * sin(3.14159265 * t);
         vec2 d = p - uMouse; float md = length(d);
         gl_Position = vec4(p.x / uAsp, p.y, 0., 1.);
@@ -82,7 +85,10 @@ function initHero() {
         float dt = t - head; dt = dt - floor(dt + .5);
         float pk = exp(-dt * dt * 420.);
         float fade = smoothstep(0., .07, t) * smoothstep(1., .93, t);
-        vA = fade * (.10 + .34 * h(s * 2.9) * (.5 + .5 * env)) + pk * .85 * fade;
+        /* появление: фронт нитей бежит от Москвы к Дели, за ним — мягкий шлейф */
+        float front = uGrow * 1.18;
+        float reveal = smoothstep(front, front - .22, t);
+        vA = (fade * (.10 + .34 * h(s * 2.9) * (.5 + .5 * env)) + pk * .85 * fade) * reveal;
         vT = t; vHot = pk;
       }`,
     fragmentShader: `
@@ -104,22 +110,24 @@ function initHero() {
   const nodeMat = new THREE.ShaderMaterial({
     uniforms, transparent: true, depthWrite: false, depthTest: false, blending: THREE.AdditiveBlending,
     vertexShader: `
-      attribute float aEnd; uniform float uTime, uAsp, uPx; varying float vE, vP;
+      attribute float aEnd; uniform float uTime, uAsp, uPx, uGrow; varying float vE, vP, vI;
       void main(){
         ${ENDS}
         vec2 p = mix(A, B, aEnd);
         gl_Position = vec4(p.x / uAsp, p.y, 0., 1.);
         vP = .5 + .5 * sin(uTime * 2.2 + aEnd * 3.);
-        gl_PointSize = (40. + 16. * vP) * uPx; vE = aEnd;
+        float on = mix(smoothstep(0., .18, uGrow), smoothstep(.82, 1., uGrow), aEnd);
+        vI = on;
+        gl_PointSize = (40. + 16. * vP) * uPx * (.35 + .65 * on); vE = aEnd;
       }`,
     fragmentShader: `
-      precision highp float; varying float vE, vP;
+      precision highp float; varying float vE, vP, vI;
       void main(){
         float d = length(gl_PointCoord - .5) * 2.;
         if (d > 1.) discard;
         float core = 1. - smoothstep(0., .16, d), halo = pow(1. - clamp(d, 0., 1.), 2.) * .55;
         vec3 c = mix(vec3(.75, 1., .9), vec3(1., .66, .30), vE);
-        gl_FragColor = vec4(c, core + halo * (.6 + .4 * vP));
+        gl_FragColor = vec4(c, (core + halo * (.6 + .4 * vP)) * vI);
       }`
   });
   const nodes = new THREE.Points(ng, nodeMat); nodes.frustumCulled = false; scene.add(nodes);
@@ -134,6 +142,7 @@ function initHero() {
   const draw = (t) => {
     const asp = uniforms.uAsp.value;
     uniforms.uTime.value = t;
+    if (!reduce) { const x = Math.min(1, Math.max(0, (t - .35) / 3.2)); uniforms.uGrow.value = 1 - Math.pow(1 - x, 3); }
     uniforms.uMouse.value.set((mouse.x - .5) * 2 * asp, (mouse.y - .5) * 2);
     renderer.render(scene, cam);
   };
